@@ -1,0 +1,21 @@
+@import 'statics/styles/helpers/variables.scss';
+
+.head {
+  background-color: white;
+  &__dash {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 0;
+  }
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  &__name {
+    margin: 0 10px;
+  }
+}

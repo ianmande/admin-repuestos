@@ -1,0 +1,24 @@
+@import 'statics/styles/helpers/variables.scss';
+
+.menu__layout {
+  justify-self: stretch;
+  align-self: stretch;
+  background-color: white;
+}
+
+.menu {
+  display: grid;
+  justify-content: center;
+}
+
+.user {
+  margin: 1em 0;
+  &__information {
+    display: flex;
+    gap: 12px;
+  }
+  &__name {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+}
