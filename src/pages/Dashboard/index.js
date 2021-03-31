@@ -3,6 +3,7 @@ import React from 'react';
 
 //Components
 import CardDash from 'components/CardDash';
+import InventarioRepuestos from 'components/InventarioHome'
 
 //styles
 import styles from 'statics/styles/pages/dashboard.module.scss';
@@ -84,6 +85,7 @@ const index = () => {
         </CardDash>
 
         {/* fin Graficos */}
+        <InventarioRepuestos col={3} row={2} />
       </div>
     </div>
   );
