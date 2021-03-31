@@ -1,5 +1,6 @@
 //vendors
 import React from 'react';
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 //Components
 import CardDash from 'components/CardDash';
@@ -80,6 +81,7 @@ const index = () => {
         <CardDash col={1} row={2}>
           <div className={styles.progress}>
             <h3 className={styles.progress__title}>Categoria más vendida</h3>
+            <ProgressBar now={40} />
           </div>
         </CardDash>
 
