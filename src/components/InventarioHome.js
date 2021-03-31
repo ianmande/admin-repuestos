@@ -1,5 +1,6 @@
 import React from 'react';
 
+import MuiAlert from '@material-ui/lab/Alert';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 
 import { Paper, TableRow, TableHead, TableContainer, TableCell, TableBody, Table } from '@material-ui/core';
@@ -71,7 +72,7 @@ function InventarioHome({ col, row = 1 }) {
                                     <StyledTableCell align="right">{row.categoria}</StyledTableCell>
                                     <StyledTableCell align="right">{row.precio}</StyledTableCell>
                                     <StyledTableCell align="right">{row.cantidad}</StyledTableCell>
-                                    <StyledTableCell align="right">{row.publicado}</StyledTableCell>
+                                    <StyledTableCell align="right">{row.publicado ? <Alert severity="success">Publicado</Alert> : <Alert severity="error">No Publicado</Alert>}</StyledTableCell>
                                 </StyledTableRow>
                             ))}
                         </TableBody>
