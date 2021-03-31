@@ -1,8 +1,8 @@
 .main__layout {
-  padding: 1.5em;
   &__title {
     color: #707070;
     font-weight: bold;
+    margin-bottom: 10px;
   }
 }
 .admin__cards {
@@ -10,6 +10,9 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-rows: minmax(auto, 140px);
   gap: 25px;
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
 }
 .saldo {
   text-align: end;
@@ -40,4 +43,7 @@
   &__saldo {
     color: #fff;
   }
+}
+.progress {
+  height: 100%;
 }

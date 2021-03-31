@@ -1,9 +1,9 @@
 //vendors
 import React from 'react';
-import ProgressBar from 'react-bootstrap/ProgressBar';
 
 //Components
 import CardDash from 'components/CardDash';
+import CategoriesBuys from 'components/CategoriesBuys';
 
 //styles
 import styles from 'statics/styles/pages/dashboard.module.scss';
@@ -11,10 +11,11 @@ import styles from 'statics/styles/pages/dashboard.module.scss';
 //statics
 import Pie from 'statics/images/Pie';
 import imgEstadistica from 'statics/images/estadisticas.png';
+import { VENTAS_CATEGORIAS } from 'constants/VentasCategorias';
 
 const index = () => {
   return (
-    <div className={styles.main__layout}>
+    <>
       <h1 className={styles.main__layout__title}>Dashboard</h1>
       <div className={styles.admin__cards}>
         {/* incio saldo */}
@@ -81,13 +82,13 @@ const index = () => {
         <CardDash col={1} row={2}>
           <div className={styles.progress}>
             <h3 className={styles.progress__title}>Categoria más vendida</h3>
-            <ProgressBar now={40} />
+            <CategoriesBuys data={VENTAS_CATEGORIAS} />
           </div>
         </CardDash>
 
         {/* fin Graficos */}
       </div>
-    </div>
+    </>
   );
 };
 

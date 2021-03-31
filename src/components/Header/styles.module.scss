@@ -3,6 +3,7 @@
 .head {
   background-color: white;
   &__dash {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,6 +16,11 @@
   justify-content: space-between;
   align-items: center;
   gap: 25px;
+  color: #6a6a6a;
+  &__information {
+    display: flex;
+    align-items: center;
+  }
   &__name {
     margin: 0 10px;
   }
