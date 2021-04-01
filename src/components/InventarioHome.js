@@ -1,9 +1,20 @@
 import React from 'react';
 
-import MuiAlert from '@material-ui/lab/Alert';
+import Alert from '@material-ui/lab/Alert';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 
-import { Paper, TableRow, TableHead, TableContainer, TableCell, TableBody, Table } from '@material-ui/core';
+import { Paper, TableRow, TableHead, TableContainer, TableCell, TableBody, Table, } from '@material-ui/core';
+
+import ProgresIndividual from 'components/progresIndividual'
+
+
+const COLOR__PROGRESS = {
+    overSeventy: '#4ad987',
+    overForty: '#37a8ff',
+    lessForty: '#FFA833',
+};
+
+
 
 
 const StyledTableCell = withStyles((theme) => ({
@@ -25,31 +36,54 @@ const StyledTableRow = withStyles((theme) => ({
 }))(TableRow);
 
 const useStyles = makeStyles({
-
+    titulo: {
+        color: "#6a6a6a",
+        padding: "1em",
+    }
 
 });
 function createData(nombre, disponibilidad, categoria, precio, cantidad, publicado) {
     return { nombre, disponibilidad, categoria, precio, cantidad, publicado };
 }
 
+const determinateColor = (percentage) => {
+    let color = '';
+
+    if (percentage >= 70) {
+        color = COLOR__PROGRESS.overSeventy;
+    } else if (percentage >= 40) {
+        color = COLOR__PROGRESS.overForty;
+    } else {
+        color = COLOR__PROGRESS.lessForty;
+    }
+    return color;
+};
+
+
 const rows = [
+    createData('Neumático', 100, 'Neumaticos', '00', 25, true),
+    createData('Neumático', 70, 'Neumaticos', '00', 25, true),
     createData('Neumático', 10, 'Neumaticos', '00', 25, true),
-    createData('Neumático', 10, 'Neumaticos', '00', 25, true),
-    createData('Neumático', 10, 'Neumaticos', '00', 25, true),
-    createData('Neumático', 10, 'Neumaticos', '00', 25, true),
+    createData('Neumático', 50, 'Neumaticos', '00', 25, true),
 
 
 ];
 
+
+
 function InventarioHome({ col, row = 1 }) {
+
+
     const classes = useStyles();
+
+
     return (
         <section style={{
             gridColumn: `span ${col}`,
             gridRow: `span ${row}`,
         }}>
             <Paper>
-                <h2>Inventario</h2>
+                <h3 className={classes.titulo}>Inventario</h3>
                 <TableContainer >
                     <Table className={classes.table} >
                         <TableHead>
@@ -68,7 +102,8 @@ function InventarioHome({ col, row = 1 }) {
                                     <StyledTableCell component="th" scope="row">
                                         {row.nombre}
                                     </StyledTableCell>
-                                    <StyledTableCell align="right">{row.disponibilidad}</StyledTableCell>
+                                    <StyledTableCell align="right"><ProgresIndividual color={determinateColor(row.disponibilidad)} valor={row.disponibilidad} />
+                                    </StyledTableCell>
                                     <StyledTableCell align="right">{row.categoria}</StyledTableCell>
                                     <StyledTableCell align="right">{row.precio}</StyledTableCell>
                                     <StyledTableCell align="right">{row.cantidad}</StyledTableCell>
