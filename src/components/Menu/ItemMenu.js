@@ -3,8 +3,9 @@ import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 
 //Material-UI
-import { Collapse, List, ListItem, makeStyles } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import { ExpandLess, ExpandMore } from '@material-ui/icons';
+import SubItemMenu from './SubItemMenu';
 
 const useStyles = makeStyles((theme) => ({
   subList: {
@@ -30,24 +31,13 @@ const ItemMenu = ({ title, path, subLinks = [] }) => {
           {title}
         </Link>
       ) : (
-        <Link to={path} onClick={handleClick} className={classes.subListLink}>
-          {title}
-          {open ? <ExpandLess /> : <ExpandMore />}
-        </Link>
-      )}
-      {subLinks.length ? (
-        <Collapse in={open} timeout="auto" unmountOnExit>
-          {subLinks.length &&
-            subLinks.map(({ title, path }, index) => (
-              <List component="div" disablePadding key={index}>
-                <ListItem button>
-                  <Link to={path}>{title}</Link>
-                </ListItem>
-              </List>
-            ))}
-        </Collapse>
-      ) : (
-        ''
+        <>
+          <Link to={path} onClick={handleClick} className={classes.subListLink}>
+            {title}
+            {open ? <ExpandLess /> : <ExpandMore />}
+          </Link>
+          <SubItemMenu listLinks={subLinks} state={open} />
+        </>
       )}
     </li>
   );

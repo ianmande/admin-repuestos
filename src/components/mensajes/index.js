@@ -28,6 +28,13 @@ function Index() {
             mensaje: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident voluptatum nostrum culpa numquam nobis, dolores nam eos repudiandae corporis quo distinctio reprehenderit molestias nemo officia minima unde consectetur dolor perspiciatis!",
             fecha: '3 horas',
             img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHqMWOPbuZolCgjRsW9rjBf91QAzARJ9oDpQ&usqp=CAU"
+        },
+        {
+            id: 2,
+            nombre: "nombre",
+            mensaje: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident voluptatum nostrum culpa numquam nobis, dolores nam eos repudiandae corporis quo distinctio reprehenderit molestias nemo officia minima unde consectetur dolor perspiciatis!",
+            fecha: '3 horas',
+            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHqMWOPbuZolCgjRsW9rjBf91QAzARJ9oDpQ&usqp=CAU"
         }
     ]
 

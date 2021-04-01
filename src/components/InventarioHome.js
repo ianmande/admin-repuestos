@@ -39,7 +39,7 @@ const StyledTableRow = withStyles((theme) => ({
 const useStyles = makeStyles({
     titulo: {
         color: "#6a6a6a",
-        padding: "1em",
+
     }
 
 });
@@ -61,6 +61,7 @@ const determinateColor = (percentage) => {
 };
 
 
+
 const rows = [
     createData('Neumático', 100, 'Neumaticos', '00', 25, true),
     createData('Neumático', 70, 'Neumaticos', '00', 25, true),
@@ -72,7 +73,7 @@ const rows = [
 
 
 
-function InventarioHome({ col, row = 1 }) {
+function InventarioHome(}) {
 
 
     const classes = useStyles();
