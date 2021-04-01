@@ -3,6 +3,7 @@ import React from 'react';
 
 //Components
 import CardDash from 'components/CardDash';
+import InventarioRepuestos from 'components/InventarioHome'
 import CategoriesBuys from 'components/CategoriesBuys';
 
 //styles
@@ -87,6 +88,7 @@ const index = () => {
         </CardDash>
 
         {/* fin Graficos */}
+        <InventarioRepuestos col={3} row={2} />
       </div>
     </>
   );
