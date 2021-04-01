@@ -5,6 +5,7 @@ import React from 'react';
 import CardDash from 'components/CardDash';
 import InventarioRepuestos from 'components/InventarioHome'
 import CategoriesBuys from 'components/CategoriesBuys';
+import Mensajes from 'components/mensajes'
 
 //styles
 import styles from 'statics/styles/pages/dashboard.module.scss';
@@ -88,7 +89,12 @@ const index = () => {
         </CardDash>
 
         {/* fin Graficos */}
-        <InventarioRepuestos col={3} row={2} />
+        <CardDash col={3} row={3} >
+          <InventarioRepuestos col={3} row={2} />
+        </CardDash>
+        <CardDash col={3} row={3} >
+          <Mensajes />
+        </CardDash>
       </div>
     </>
   );

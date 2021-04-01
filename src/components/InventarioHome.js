@@ -16,15 +16,7 @@ const COLOR__PROGRESS = {
 
 
 
-import {
-    Paper,
-    TableRow,
-    TableHead,
-    TableContainer,
-    TableCell,
-    TableBody,
-    Table,
-} from '@material-ui/core';
+
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -87,45 +79,42 @@ function InventarioHome({ col, row = 1 }) {
 
 
     return (
-        <section style={{
-            gridColumn: `span ${col}`,
-            gridRow: `span ${row}`,
-        }}>
-            <Paper>
-                <h3 className={classes.titulo}>Inventario</h3>
-                <TableContainer >
-                    <Table className={classes.table} >
-                        <TableHead>
-                            <TableRow>
-                                <StyledTableCell>Nombre</StyledTableCell>
-                                <StyledTableCell align="right">Disponibilidad</StyledTableCell>
-                                <StyledTableCell align="right">Categoria</StyledTableCell>
-                                <StyledTableCell align="right">Precio</StyledTableCell>
-                                <StyledTableCell align="right">Cantidad</StyledTableCell>
-                                <StyledTableCell align="right">Status</StyledTableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {rows.map((row) => (
-                                <StyledTableRow key={row.name}>
-                                    <StyledTableCell component="th" scope="row">
-                                        {row.nombre}
-                                    </StyledTableCell>
-                                    <StyledTableCell align="right"><ProgresIndividual color={determinateColor(row.disponibilidad)} valor={row.disponibilidad} />
-                                    </StyledTableCell>
-                                    <StyledTableCell align="right">{row.categoria}</StyledTableCell>
-                                    <StyledTableCell align="right">{row.precio}</StyledTableCell>
-                                    <StyledTableCell align="right">{row.cantidad}</StyledTableCell>
-                                    <StyledTableCell align="right">{row.publicado ? <Alert severity="success">Publicado</Alert> : <Alert severity="error">No Publicado</Alert>}</StyledTableCell>
-                                </StyledTableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
+
+        <section>
+            <h3 className={classes.titulo}>Inventario</h3>
+            <TableContainer >
+                <Table className={classes.table} >
+                    <TableHead>
+                        <TableRow>
+                            <StyledTableCell>Nombre</StyledTableCell>
+                            <StyledTableCell align="right">Disponibilidad</StyledTableCell>
+                            <StyledTableCell align="right">Categoria</StyledTableCell>
+                            <StyledTableCell align="right">Precio</StyledTableCell>
+                            <StyledTableCell align="right">Cantidad</StyledTableCell>
+                            <StyledTableCell align="right">Status</StyledTableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {rows.map((row) => (
+                            <StyledTableRow key={row.name}>
+                                <StyledTableCell component="th" scope="row">
+                                    {row.nombre}
+                                </StyledTableCell>
+                                <StyledTableCell align="right"><ProgresIndividual color={determinateColor(row.disponibilidad)} valor={row.disponibilidad} />
+                                </StyledTableCell>
+                                <StyledTableCell align="right">{row.categoria}</StyledTableCell>
+                                <StyledTableCell align="right">{row.precio}</StyledTableCell>
+                                <StyledTableCell align="right">{row.cantidad}</StyledTableCell>
+                                <StyledTableCell align="right">{row.publicado ? <Alert severity="success">Publicado</Alert> : <Alert severity="error">No Publicado</Alert>}</StyledTableCell>
+                            </StyledTableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
 
 
-            </Paper>
         </section>
+
     )
 }
 
