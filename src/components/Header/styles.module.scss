@@ -17,11 +17,57 @@
   align-items: center;
   gap: 25px;
   color: #6a6a6a;
+  @media (max-width: $mobileport) {
+    gap: 0;
+  }
+
   &__information {
     display: flex;
     align-items: center;
+    @media (max-width: 290px) {
+      display: none;
+    }
+    img {
+      width: 100%;
+      max-width: 60px;
+
+      @media (max-width: $mobileport) {
+        max-width: 30px;
+      }
+    }
+    @media (max-width: $mobileport) {
+      flex-direction: column-reverse;
+    }
   }
   &__name {
     margin: 0 10px;
+    @media (max-width: $mobileport) {
+      font-size: 10px;
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+  &__icon {
+    @media (max-width: $mobileport) {
+      max-width: 20px;
+      margin-left: 8px;
+      svg {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.main__logo {
+  margin-right: -16px;
+  @media (max-width: $tabletport) {
+    max-width: 200px;
+  }
+  @media (max-width: $mobileport) {
+    max-width: 150px;
+  }
+
+  img {
+    width: 100%;
   }
 }

@@ -57,11 +57,11 @@ const Index = ({ drawerWidth, handleOpen, state }) => {
           <MenuIcon htmlColor="#000" />
         </IconButton>
         <div className={styles.head__dash}>
-          <figure>
+          <figure className={styles.main__logo}>
             <img src={Logo} alt="Logo de repuestos web" />
           </figure>
           <div className={styles.user}>
-            <i className="user__icon">
+            <i className={styles.user__icon}>
               <Notificacion />
             </i>
             <figure className={styles.user__information}>

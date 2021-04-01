@@ -76,9 +76,14 @@ const Index = ({ drawerWidth, state, handleClose }) => {
         </div>
       </div>
       <List>
-        {LINKS_MENU.map(({ title, path }, index) => (
+        {LINKS_MENU.map(({ title, path, subLinks }, index) => (
           <ListItem button key={index}>
-            <ItemMenu title={title} path={path} key={index} />
+            <ItemMenu
+              title={title}
+              subLinks={subLinks && subLinks}
+              path={path}
+              key={index}
+            />
           </ListItem>
         ))}
       </List>
