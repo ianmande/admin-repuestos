@@ -3,7 +3,7 @@ import React from 'react';
 
 //Components
 import CardDash from 'components/CardDash';
-import InventarioRepuestos from 'components/InventarioHome'
+import InventarioRepuestos from './components/InventarioHome';
 import CategoriesBuys from 'components/CategoriesBuys';
 
 //styles
@@ -11,8 +11,8 @@ import styles from 'statics/styles/pages/dashboard.module.scss';
 
 //statics
 import Pie from 'statics/images/Pie';
-import imgEstadistica from 'statics/images/estadisticas.png';
 import { VENTAS_CATEGORIAS } from 'constants/VentasCategorias';
+import EstadisticaVenta from './components/EstadisticaVenta';
 
 const index = () => {
   return (
@@ -41,14 +41,7 @@ const index = () => {
         {/* fin saldo */}
 
         {/* incio Estadisticas */}
-        <CardDash col={2} row={2}>
-          <div className={styles.estadisticas}>
-            <h3 className={styles.estadisticas__title}>
-              Estadísticas de venta
-            </h3>
-            <img src={imgEstadistica} alt="" style={{ width: '100%' }} />
-          </div>
-        </CardDash>
+        <EstadisticaVenta styles={styles} />
 
         <CardDash col={1} row={1}>
           <div className={styles.estadistias__saldo}>
@@ -88,7 +81,7 @@ const index = () => {
         </CardDash>
 
         {/* fin Graficos */}
-        <InventarioRepuestos col={3} row={2} />
+        <InventarioRepuestos col={3} row={3} />
       </div>
     </>
   );
