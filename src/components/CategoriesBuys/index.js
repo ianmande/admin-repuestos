@@ -56,7 +56,7 @@ const Index = ({ data = [] }) => {
   };
 
   return (
-    <div className={classes.progress__categories}>
+    <>
       {data.map(({ name, units }, index) => {
         const porcentage = percentageOfUnit(units);
         const colorBar = determinateColor(porcentage);
@@ -71,7 +71,7 @@ const Index = ({ data = [] }) => {
           />
         );
       })}
-    </div>
+    </>
   );
 };
 

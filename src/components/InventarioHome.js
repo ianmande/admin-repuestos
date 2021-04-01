@@ -16,6 +16,15 @@ const COLOR__PROGRESS = {
 
 
 
+import {
+    Paper,
+    TableRow,
+    TableHead,
+    TableContainer,
+    TableCell,
+    TableBody,
+    Table,
+} from '@material-ui/core';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -120,4 +129,4 @@ function InventarioHome({ col, row = 1 }) {
     )
 }
 
-export default InventarioHome
+export default InventarioHome;

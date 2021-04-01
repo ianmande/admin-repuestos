@@ -46,7 +46,7 @@ const index = () => {
             <h3 className={styles.estadisticas__title}>
               Estadísticas de venta
             </h3>
-            <img src={imgEstadistica} alt="" />
+            <img src={imgEstadistica} alt="" style={{ width: '100%' }} />
           </div>
         </CardDash>
 

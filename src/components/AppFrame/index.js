@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   main__layout: {
     maxWidth: '1200px',
     margin: '50px auto 0 auto',
-    padding: '1.5em',
+    padding: '1.5em 0',
   },
 }));
 
