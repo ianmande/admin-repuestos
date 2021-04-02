@@ -10,9 +10,9 @@ import CategoriesBuys from 'components/CategoriesBuys';
 import styles from 'statics/styles/pages/dashboard.module.scss';
 
 //statics
-import Pie from 'statics/images/Pie';
 import { VENTAS_CATEGORIAS } from 'constants/VentasCategorias';
 import EstadisticaVenta from './components/EstadisticaVenta';
+import GraficosVentas from './components/GraficosVentas';
 
 const index = () => {
   return (
@@ -60,18 +60,7 @@ const index = () => {
         {/* fin Estadisticas */}
 
         {/* incio Graficos */}
-        <CardDash col={2} row={2}>
-          <div className={styles.graficos}>
-            <h3 className={styles.graficos__title}>Producto más vendido</h3>
-            <div className={styles.graficos__pie}>
-              <Pie />
-              <div className={styles.graficos__pie_result}>
-                <small>Total de productos</small>
-                <h4>544</h4>
-              </div>
-            </div>
-          </div>
-        </CardDash>
+        <GraficosVentas styles={styles} />
 
         <CardDash col={1} row={2}>
           <div className={styles.progress}>

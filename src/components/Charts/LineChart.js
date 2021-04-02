@@ -20,7 +20,7 @@ const LineChart = ({ data = {}, options = {} }) => {
       data: data,
       options: options,
     });
-  }, [data]);
+  }, [data, options]);
 
   return (
     <div className={classes.root}>
